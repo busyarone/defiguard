@@ -60,27 +60,38 @@ function Wallet() {
         Connect Wallet
       </button>
       {account && (
-        <div>
-          <p><strong>Your Address:</strong> {account}</p>
-          <input
-            type="text"
-            className="form-control mb-2"
-            placeholder="Recipient Address"
-            value={recipient}
-            onChange={(e) => setRecipient(e.target.value)}
-          />
-          <input
-            type="number"
-            className="form-control mb-2"
-            placeholder="Amount (ETH)"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-          />
-          <button className="btn btn-success" onClick={sendEth}>
-            Send ETH
-          </button>
-        </div>
-      )}
+  <div>
+    <p>
+      <strong>Your Address:</strong> {account}
+      <button
+        className="btn btn-outline-secondary btn-sm ms-2"
+        onClick={() => {
+          navigator.clipboard.writeText(account);
+          setStatus("Address copied to clipboard!");
+        }}
+      >
+        Copy
+      </button>
+    </p>
+    <input
+      type="text"
+      className="form-control mb-2"
+      placeholder="Recipient Address"
+      value={recipient}
+      onChange={(e) => setRecipient(e.target.value)}
+    />
+    <input
+      type="number"
+      className="form-control mb-2"
+      placeholder="Amount (ETH)"
+      value={amount}
+      onChange={(e) => setAmount(e.target.value)}
+    />
+    <button className="btn btn-success" onClick={sendEth}>
+      Send ETH
+    </button>
+  </div>
+)}
       <p className="mt-3">{status}</p>
     </div>
   );
