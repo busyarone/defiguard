@@ -40,6 +40,9 @@ function Header() {
                             <a className="nav-link" href="team">Team</a>
                         </li>
                         <li className="nav-item">
+                            <a className="nav-link" href="wallet">Wallet</a>
+                        </li>
+                        <li className="nav-item">
                             <a className="nav-link" href="blog">Blog</a>
                         </li>
                         <li className="nav-item">
